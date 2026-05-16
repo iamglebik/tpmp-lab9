@@ -8,6 +8,7 @@
 
 "auth_login_button" = "Войти";
 "auth_register_button" = "Регистрация";
+"auth_cancel" = "Отмена";
 "auth_email_placeholder" = "Email";
 "auth_password_placeholder" = "Пароль";
 "auth_name_placeholder" = "Полное имя";
