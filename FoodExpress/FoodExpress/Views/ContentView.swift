@@ -2,20 +2,18 @@
 //  ContentView.swift
 //  FoodExpress
 //
-//  Created by Глеб Синяков on 16.05.26.
-//
 
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if isLoggedIn {
+            MainTabView(isLoggedIn: $isLoggedIn)
+        } else {
+            AuthView(isLoggedIn: $isLoggedIn)
         }
-        .padding()
     }
 }
 
