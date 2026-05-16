@@ -8,6 +8,7 @@
 
 "auth_login_button" = "Sign In";
 "auth_register_button" = "Sign Up";
+"auth_cancel" = "Cancel";
 "auth_email_placeholder" = "Email";
 "auth_password_placeholder" = "Password";
 "auth_name_placeholder" = "Full Name";

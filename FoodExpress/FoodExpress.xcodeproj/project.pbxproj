@@ -37,6 +37,7 @@
 		DBECE3A42FB8D8A000F0370C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECE3A32FB8D89F00F0370C /* LocationService.swift */; };
 		DBECE3A62FB8D8AF00F0370C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECE3A52FB8D8AF00F0370C /* PaymentService.swift */; };
 		DBECE3AC2FB8DCDA00F0370C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBECE3AA2FB8DCDA00F0370C /* Localizable.strings */; };
+		DBECE3B22FB8EA5B00F0370C /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DBECE3B12FB8EA5B00F0370C /* SQLite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBECE3B22FB8EA5B00F0370C /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +256,9 @@
 			dependencies = (
 			);
 			name = FoodExpress;
+			packageProductDependencies = (
+				DBECE3B12FB8EA5B00F0370C /* SQLite */,
+			);
 			productName = FoodExpress;
 			productReference = DBECE3492FB8D25100F0370C /* FoodExpress.app */;
 			productType = "com.apple.product-type.application";
@@ -328,6 +333,10 @@
 				be,
 			);
 			mainGroup = DBECE3402FB8D25000F0370C;
+			packageReferences = (
+				DBECE3AF2FB8E76500F0370C /* XCRemoteSwiftPackageReference */,
+				DBECE3B02FB8EA5B00F0370C /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = DBECE34A2FB8D25100F0370C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -741,6 +750,32 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBECE3AF2FB8E76500F0370C /* XCRemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.0;
+			};
+		};
+		DBECE3B02FB8EA5B00F0370C /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = exactVersion;
+				version = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBECE3B12FB8EA5B00F0370C /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBECE3B02FB8EA5B00F0370C /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DBECE3412FB8D25000F0370C /* Project object */;
 }
