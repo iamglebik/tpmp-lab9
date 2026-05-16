@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  FoodExpress
+
+  Created by Глеб Синяков on 16.05.26.
+  
+*/
+
+"auth_login_button" = "Увайсці";
+"auth_register_button" = "Рэгістрацыя";
+"auth_email_placeholder" = "Email";
+"auth_password_placeholder" = "Пароль";
+"auth_name_placeholder" = "Поўнае імя";
+"auth_phone_placeholder" = "Нумар тэлефона";
+"auth_invalid_email" = "Увядзіце карэктны email";
+"auth_invalid_password" = "Пароль павінен утрымліваць мінімум 6 сімвалаў";
+"auth_error_title" = "Памылка";
+"auth_error_ok" = "OK";
+
+"menu_title" = "Меню";
+"menu_search" = "Пошук страў...";
+"menu_categories_all" = "Усе";
+"menu_categories_pizza" = "Піца";
+"menu_categories_sushi" = "Сушы";
+"menu_categories_burgers" = "Бургеры";
+"menu_categories_drinks" = "Напоі";
+"menu_add_to_cart" = "У кошык";
+"menu_currency" = "BYN";
+
+"dish_detail_title" = "Дэталі";
+"dish_detail_ingredients" = "Склад";
+"dish_detail_add" = "Дадаць у кошык";
+
+"cart_title" = "Кошык";
+"cart_empty" = "Кошык пусты";
+"cart_quantity" = "Колькасць";
+"cart_remove" = "Выдаліць";
+"cart_total" = "Разам";
+"cart_checkout" = "Аформіць заказ";
+
+"checkout_title" = "Афармленне";
+"checkout_payment_method" = "Спосаб аплаты";
+"checkout_delivery_address" = "Адрас дастаўкі";
+"checkout_comment" = "Каментарый да заказу";
+"checkout_comment_placeholder" = "Дадатковыя пажаданні...";
+"checkout_total" = "Разам";
+"checkout_confirm" = "Пацвердзіць заказ";
+"checkout_success" = "Заказ пацверджаны";
+"checkout_success_message" = "Ваш заказ паспяхова аформлены";
+
+"payment_online" = "Анлайн";
+"payment_erip" = "АРІП";
+"payment_terminal" = "Тэрмінал";
+"payment_cash" = "Гатоўка";
+
+"map_title" = "Мапа";
+"map_select_restaurant" = "Абраць рэстаран";
+"map_nearest" = "Найбліжэйшы";
+
+"profile_title" = "Профіль";
+"profile_logout" = "Выйсці";
+"profile_orders" = "Мае заказы";
+"profile_language" = "Мова";
+
+"tab_menu" = "Меню";
+"tab_map" = "Мапа";
+"tab_cart" = "Кошык";
+"tab_profile" = "Профіль";

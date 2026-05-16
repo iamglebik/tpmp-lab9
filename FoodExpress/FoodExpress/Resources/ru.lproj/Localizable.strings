@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  FoodExpress
+
+  Created by Глеб Синяков on 16.05.26.
+  
+*/
+
+"auth_login_button" = "Войти";
+"auth_register_button" = "Регистрация";
+"auth_email_placeholder" = "Email";
+"auth_password_placeholder" = "Пароль";
+"auth_name_placeholder" = "Полное имя";
+"auth_phone_placeholder" = "Номер телефона";
+"auth_invalid_email" = "Введите корректный email";
+"auth_invalid_password" = "Пароль должен содержать минимум 6 символов";
+"auth_error_title" = "Ошибка";
+"auth_error_ok" = "OK";
+
+"menu_title" = "Меню";
+"menu_search" = "Поиск блюд...";
+"menu_categories_all" = "Все";
+"menu_categories_pizza" = "Пицца";
+"menu_categories_sushi" = "Суши";
+"menu_categories_burgers" = "Бургеры";
+"menu_categories_drinks" = "Напитки";
+"menu_add_to_cart" = "В корзину";
+"menu_currency" = "BYN";
+
+"dish_detail_title" = "Детали";
+"dish_detail_ingredients" = "Состав";
+"dish_detail_add" = "Добавить в корзину";
+
+"cart_title" = "Корзина";
+"cart_empty" = "Корзина пуста";
+"cart_quantity" = "Количество";
+"cart_remove" = "Удалить";
+"cart_total" = "Итого";
+"cart_checkout" = "Оформить заказ";
+
+"checkout_title" = "Оформление";
+"checkout_payment_method" = "Способ оплаты";
+"checkout_delivery_address" = "Адрес доставки";
+"checkout_comment" = "Комментарий к заказу";
+"checkout_comment_placeholder" = "Дополнительные пожелания...";
+"checkout_total" = "Итого";
+"checkout_confirm" = "Подтвердить заказ";
+"checkout_success" = "Заказ подтверждён";
+"checkout_success_message" = "Ваш заказ успешно оформлен";
+
+"payment_online" = "Онлайн";
+"payment_erip" = "ЕРИП";
+"payment_terminal" = "Терминал";
+"payment_cash" = "Наличные";
+
+"map_title" = "Карта";
+"map_select_restaurant" = "Выбрать ресторан";
+"map_nearest" = "Ближайший";
+
+"profile_title" = "Профиль";
+"profile_logout" = "Выйти";
+"profile_orders" = "Мои заказы";
+"profile_language" = "Язык";
+
+"tab_menu" = "Меню";
+"tab_map" = "Карта";
+"tab_cart" = "Корзина";
+"tab_profile" = "Профиль";

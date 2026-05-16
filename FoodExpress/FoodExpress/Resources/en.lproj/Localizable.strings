@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  FoodExpress
+
+  Created by Глеб Синяков on 16.05.26.
+  
+*/
+
+"auth_login_button" = "Sign In";
+"auth_register_button" = "Sign Up";
+"auth_email_placeholder" = "Email";
+"auth_password_placeholder" = "Password";
+"auth_name_placeholder" = "Full Name";
+"auth_phone_placeholder" = "Phone Number";
+"auth_invalid_email" = "Please enter a valid email";
+"auth_invalid_password" = "Password must be at least 6 characters";
+"auth_error_title" = "Error";
+"auth_error_ok" = "OK";
+
+"menu_title" = "Menu";
+"menu_search" = "Search dishes...";
+"menu_categories_all" = "All";
+"menu_categories_pizza" = "Pizza";
+"menu_categories_sushi" = "Sushi";
+"menu_categories_burgers" = "Burgers";
+"menu_categories_drinks" = "Drinks";
+"menu_add_to_cart" = "Add to Cart";
+"menu_currency" = "BYN";
+
+"dish_detail_title" = "Details";
+"dish_detail_ingredients" = "Ingredients";
+"dish_detail_add" = "Add to Cart";
+
+"cart_title" = "Cart";
+"cart_empty" = "Your cart is empty";
+"cart_quantity" = "Quantity";
+"cart_remove" = "Remove";
+"cart_total" = "Total";
+"cart_checkout" = "Proceed to Checkout";
+
+"checkout_title" = "Checkout";
+"checkout_payment_method" = "Payment Method";
+"checkout_delivery_address" = "Delivery Address";
+"checkout_comment" = "Comment to order";
+"checkout_comment_placeholder" = "Additional details...";
+"checkout_total" = "Total";
+"checkout_confirm" = "Confirm Order";
+"checkout_success" = "Order confirmed";
+"checkout_success_message" = "Your order has been placed successfully";
+
+"payment_online" = "Online";
+"payment_erip" = "ERIP";
+"payment_terminal" = "Terminal";
+"payment_cash" = "Cash";
+
+"map_title" = "Map";
+"map_select_restaurant" = "Select Restaurant";
+"map_nearest" = "Nearest";
+
+"profile_title" = "Profile";
+"profile_logout" = "Log Out";
+"profile_orders" = "My Orders";
+"profile_language" = "Language";
+
+"tab_menu" = "Menu";
+"tab_map" = "Map";
+"tab_cart" = "Cart";
+"tab_profile" = "Profile";
