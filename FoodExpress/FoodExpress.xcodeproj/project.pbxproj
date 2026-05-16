@@ -38,6 +38,7 @@
 		DBECE3A62FB8D8AF00F0370C /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECE3A52FB8D8AF00F0370C /* PaymentService.swift */; };
 		DBECE3AC2FB8DCDA00F0370C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBECE3AA2FB8DCDA00F0370C /* Localizable.strings */; };
 		DBECE3B22FB8EA5B00F0370C /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DBECE3B12FB8EA5B00F0370C /* SQLite */; };
+		DBECE3B42FB8F1C700F0370C /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECE3B32FB8F1C700F0370C /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		DBECE3AB2FB8DCDA00F0370C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DBECE3AD2FB8DCF000F0370C /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DBECE3AE2FB8DCF400F0370C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DBECE3B32FB8F1C700F0370C /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				DBECE38F2FB8D78300F0370C /* CheckoutView.swift */,
 				DBECE3912FB8D79200F0370C /* MapView.swift */,
 				DBECE3932FB8D7A400F0370C /* ProfileView.swift */,
+				DBECE3B32FB8F1C700F0370C /* EditProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				DBECE3902FB8D78300F0370C /* CheckoutView.swift in Sources */,
 				DBECE39E2FB8D86700F0370C /* MapViewModel.swift in Sources */,
 				DBECE3802FB8D6C600F0370C /* Dish.swift in Sources */,
+				DBECE3B42FB8F1C700F0370C /* EditProfileView.swift in Sources */,
 				DBECE34F2FB8D25100F0370C /* ContentView.swift in Sources */,
 				DBECE3962FB8D7EF00F0370C /* AuthViewModel.swift in Sources */,
 				DBECE3A02FB8D87D00F0370C /* DatabaseService.swift in Sources */,

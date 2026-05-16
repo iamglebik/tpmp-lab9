@@ -45,6 +45,11 @@ class AuthViewModel: ObservableObject {
             currentUser = user
             isLoggedIn = true
             errorMessage = nil
+            
+            // Сохраняем данные пользователя в UserDefaults для отображения в профиле
+            UserDefaults.standard.set(user.name, forKey: "userName")
+            UserDefaults.standard.set(user.email, forKey: "userEmail")
+            UserDefaults.standard.set(user.phone, forKey: "userPhone")
         } else {
             errorMessage = "Неверный email или пароль"
         }
@@ -81,6 +86,11 @@ class AuthViewModel: ObservableObject {
             currentUser = user
             isLoggedIn = true
             errorMessage = nil
+            
+            // Сохраняем данные пользователя в UserDefaults для отображения в профиле
+            UserDefaults.standard.set(user.name, forKey: "userName")
+            UserDefaults.standard.set(user.email, forKey: "userEmail")
+            UserDefaults.standard.set(user.phone, forKey: "userPhone")
         } else {
             errorMessage = "Пользователь с таким email уже существует"
         }
@@ -95,5 +105,10 @@ class AuthViewModel: ObservableObject {
         name = ""
         phone = ""
         errorMessage = nil
+        
+        // Очищаем UserDefaults при выходе
+        UserDefaults.standard.removeObject(forKey: "userName")
+        UserDefaults.standard.removeObject(forKey: "userEmail")
+        UserDefaults.standard.removeObject(forKey: "userPhone")
     }
 }
