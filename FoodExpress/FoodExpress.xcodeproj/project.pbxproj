@@ -39,6 +39,7 @@
 		DBECE3AC2FB8DCDA00F0370C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBECE3AA2FB8DCDA00F0370C /* Localizable.strings */; };
 		DBECE3B22FB8EA5B00F0370C /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = DBECE3B12FB8EA5B00F0370C /* SQLite */; };
 		DBECE3B42FB8F1C700F0370C /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECE3B32FB8F1C700F0370C /* EditProfileView.swift */; };
+		DBECE3B62FB8F8A900F0370C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECE3B52FB8F8A900F0370C /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		DBECE3AD2FB8DCF000F0370C /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DBECE3AE2FB8DCF400F0370C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DBECE3B32FB8F1C700F0370C /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		DBECE3B52FB8F8A900F0370C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				DBECE3912FB8D79200F0370C /* MapView.swift */,
 				DBECE3932FB8D7A400F0370C /* ProfileView.swift */,
 				DBECE3B32FB8F1C700F0370C /* EditProfileView.swift */,
+				DBECE3B52FB8F8A900F0370C /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				DBECE3822FB8D6E100F0370C /* Order.swift in Sources */,
 				DBECE37E2FB8D6AC00F0370C /* Restaurant.swift in Sources */,
 				DBECE3A22FB8D88D00F0370C /* AuthService.swift in Sources */,
+				DBECE3B62FB8F8A900F0370C /* MainTabView.swift in Sources */,
 				DBECE3842FB8D6FA00F0370C /* OrderItem.swift in Sources */,
 				DBECE39A2FB8D83C00F0370C /* CartViewModel.swift in Sources */,
 				DBECE38E2FB8D77000F0370C /* CartView.swift in Sources */,
