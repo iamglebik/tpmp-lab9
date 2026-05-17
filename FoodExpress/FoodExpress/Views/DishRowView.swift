@@ -2,7 +2,7 @@
 //  DishRowView.swift
 //  FoodExpress
 //
-//  Created by Глеб Синяков on 16.05.26.
+//  Created by Глеб Синяков on 17.05.26.
 //
 
 import SwiftUI

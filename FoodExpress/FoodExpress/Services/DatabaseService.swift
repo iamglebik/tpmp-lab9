@@ -20,44 +20,45 @@ class DatabaseService {
     private let orderItems = Table("order_items")
     
     // Users columns
-    private let id = Expression<Int64>("id")
-    private let email = Expression<String>("email")
-    private let passwordHash = Expression<String>("password_hash")
-    private let userName = Expression<String>("name")
-    private let phone = Expression<String>("phone")
+    private let userIdCol = Expression<Int64>("id")
+    private let userEmailCol = Expression<String>("email")
+    private let userPasswordHashCol = Expression<String>("password_hash")
+    private let userNameCol = Expression<String>("name")
+    private let userPhoneCol = Expression<String>("phone")
     
     // Restaurants columns
-    private let restId = Expression<Int64>("id")
-    private let restName = Expression<String>("name")
-    private let latitude = Expression<Double>("latitude")
-    private let longitude = Expression<Double>("longitude")
-    private let cuisineType = Expression<String>("cuisine_type")
+    private let restIdCol = Expression<Int64>("id")
+    private let restNameCol = Expression<String>("name")
+    private let restLatCol = Expression<Double>("latitude")
+    private let restLonCol = Expression<Double>("longitude")
+    private let restCuisineCol = Expression<String>("cuisine_type")
     
     // Dishes columns
-    private let dishId = Expression<Int64>("id")
-    private let dishName = Expression<String>("name")
-    private let dishDescription = Expression<String>("description")
-    private let price = Expression<Double>("price")
-    private let category = Expression<String>("category")
-    private let imageName = Expression<String>("image_name")
-    private let restaurantId = Expression<Int64>("restaurant_id")
+    private let dishIdCol = Expression<Int64>("id")
+    private let dishNameCol = Expression<String>("name")
+    private let dishDescCol = Expression<String>("description")
+    private let dishPriceCol = Expression<Double>("price")
+    private let dishCatCol = Expression<String>("category")
+    private let dishImageCol = Expression<String>("image_name")
+    private let dishRestIdCol = Expression<Int64>("restaurant_id")
     
     // Orders columns
-    private let orderId = Expression<Int64>("id")
-    private let userId = Expression<Int64>("user_id")
-    private let status = Expression<String>("status")
-    private let paymentMethod = Expression<String>("payment_method")
-    private let deliveryAddress = Expression<String>("delivery_address")
-    private let comment = Expression<String>("comment")
-    private let totalAmount = Expression<Double>("total_amount")
-    private let createdAt = Expression<String>("created_at")
+    private let orderIdCol = Expression<Int64>("id")
+    private let orderUserIdCol = Expression<Int64>("user_id")
+    private let orderRestIdCol = Expression<Int64>("restaurant_id")
+    private let orderStatusCol = Expression<String>("status")
+    private let orderPayCol = Expression<String>("payment_method")
+    private let orderAddrCol = Expression<String>("delivery_address")
+    private let orderCommCol = Expression<String>("comment")
+    private let orderTotalCol = Expression<Double>("total_amount")
+    private let orderDateCol = Expression<String>("created_at")
     
     // OrderItems columns
-    private let orderItemId = Expression<Int64>("id")
-    private let orderForeignKey = Expression<Int64>("order_id")
-    private let dishForeignKey = Expression<Int64>("dish_id")
-    private let quantity = Expression<Int>("quantity")
-    private let pricePerUnit = Expression<Double>("price_per_unit")
+    private let oiIdCol = Expression<Int64>("id")
+    private let oiOrderIdCol = Expression<Int64>("order_id")
+    private let oiDishIdCol = Expression<Int64>("dish_id")
+    private let oiQtyCol = Expression<Int>("quantity")
+    private let oiPriceCol = Expression<Double>("price_per_unit")
     
     private init() {
         setupDatabase()
@@ -79,49 +80,49 @@ class DatabaseService {
     private func createTables() {
         do {
             try db?.run(users.create(ifNotExists: true) { t in
-                t.column(id, primaryKey: .autoincrement)
-                t.column(email, unique: true)
-                t.column(passwordHash)
-                t.column(userName)
-                t.column(phone)
+                t.column(userIdCol, primaryKey: .autoincrement)
+                t.column(userEmailCol, unique: true)
+                t.column(userPasswordHashCol)
+                t.column(userNameCol)
+                t.column(userPhoneCol)
             })
             
             try db?.run(restaurants.create(ifNotExists: true) { t in
-                t.column(restId, primaryKey: .autoincrement)
-                t.column(restName)
-                t.column(latitude)
-                t.column(longitude)
-                t.column(cuisineType)
+                t.column(restIdCol, primaryKey: .autoincrement)
+                t.column(restNameCol)
+                t.column(restLatCol)
+                t.column(restLonCol)
+                t.column(restCuisineCol)
             })
             
             try db?.run(dishes.create(ifNotExists: true) { t in
-                t.column(dishId, primaryKey: .autoincrement)
-                t.column(dishName)
-                t.column(dishDescription)
-                t.column(price)
-                t.column(category)
-                t.column(imageName)
-                t.column(restaurantId)
+                t.column(dishIdCol, primaryKey: .autoincrement)
+                t.column(dishNameCol)
+                t.column(dishDescCol)
+                t.column(dishPriceCol)
+                t.column(dishCatCol)
+                t.column(dishImageCol)
+                t.column(dishRestIdCol)
             })
             
             try db?.run(orders.create(ifNotExists: true) { t in
-                t.column(orderId, primaryKey: .autoincrement)
-                t.column(userId)
-                t.column(restaurantId)
-                t.column(status)
-                t.column(paymentMethod)
-                t.column(deliveryAddress)
-                t.column(comment)
-                t.column(totalAmount)
-                t.column(createdAt)
+                t.column(orderIdCol, primaryKey: .autoincrement)
+                t.column(orderUserIdCol)
+                t.column(orderRestIdCol)
+                t.column(orderStatusCol)
+                t.column(orderPayCol)
+                t.column(orderAddrCol)
+                t.column(orderCommCol)
+                t.column(orderTotalCol)
+                t.column(orderDateCol)
             })
             
             try db?.run(orderItems.create(ifNotExists: true) { t in
-                t.column(orderItemId, primaryKey: .autoincrement)
-                t.column(orderForeignKey)
-                t.column(dishForeignKey)
-                t.column(quantity)
-                t.column(pricePerUnit)
+                t.column(oiIdCol, primaryKey: .autoincrement)
+                t.column(oiOrderIdCol)
+                t.column(oiDishIdCol)
+                t.column(oiQtyCol)
+                t.column(oiPriceCol)
             })
         } catch {
             print("Create tables error: \(error)")
@@ -142,9 +143,9 @@ class DatabaseService {
     
     private func insertTestRestaurants() {
         do {
-            try db?.run(restaurants.insert(restName <- "Пицца Хаус", latitude <- 53.8930, longitude <- 27.5674, cuisineType <- "Итальянская"))
-            try db?.run(restaurants.insert(restName <- "Суши Маркет", latitude <- 53.9025, longitude <- 27.5618, cuisineType <- "Японская"))
-            try db?.run(restaurants.insert(restName <- "Бургер Кинг", latitude <- 53.9094, longitude <- 27.5709, cuisineType <- "Американская"))
+            try db?.run(restaurants.insert(restNameCol <- "Пицца Хаус", restLatCol <- 53.8930, restLonCol <- 27.5674, restCuisineCol <- "Итальянская"))
+            try db?.run(restaurants.insert(restNameCol <- "Суши Маркет", restLatCol <- 53.9025, restLonCol <- 27.5618, restCuisineCol <- "Японская"))
+            try db?.run(restaurants.insert(restNameCol <- "Бургер Кинг", restLatCol <- 53.9094, restLonCol <- 27.5709, restCuisineCol <- "Американская"))
         } catch {
             print("Insert restaurants error: \(error)")
         }
@@ -152,11 +153,11 @@ class DatabaseService {
     
     private func insertTestDishes() {
         do {
-            try db?.run(dishes.insert(dishName <- "Маргарита", dishDescription <- "Классическая пицца", price <- 18.0, category <- "Пицца", imageName <- "pizza", restaurantId <- 1))
-            try db?.run(dishes.insert(dishName <- "Пепперони", dishDescription <- "Острая пицца", price <- 22.0, category <- "Пицца", imageName <- "pizza", restaurantId <- 1))
-            try db?.run(dishes.insert(dishName <- "Филадельфия", dishDescription <- "Нежные роллы", price <- 25.0, category <- "Суши", imageName <- "sushi", restaurantId <- 2))
-            try db?.run(dishes.insert(dishName <- "Чизбургер", dishDescription <- "Сочный бургер", price <- 15.0, category <- "Бургеры", imageName <- "burger", restaurantId <- 3))
-            try db?.run(dishes.insert(dishName <- "Кола", dishDescription <- "Освежающий напиток", price <- 3.5, category <- "Напитки", imageName <- "drink", restaurantId <- 3))
+            try db?.run(dishes.insert(dishNameCol <- "Маргарита", dishDescCol <- "Классическая пицца", dishPriceCol <- 18.0, dishCatCol <- "Пицца", dishImageCol <- "pizza", dishRestIdCol <- 1))
+            try db?.run(dishes.insert(dishNameCol <- "Пепперони", dishDescCol <- "Острая пицца", dishPriceCol <- 22.0, dishCatCol <- "Пицца", dishImageCol <- "pizza", dishRestIdCol <- 1))
+            try db?.run(dishes.insert(dishNameCol <- "Филадельфия", dishDescCol <- "Нежные роллы", dishPriceCol <- 25.0, dishCatCol <- "Суши", dishImageCol <- "sushi", dishRestIdCol <- 2))
+            try db?.run(dishes.insert(dishNameCol <- "Чизбургер", dishDescCol <- "Сочный бургер", dishPriceCol <- 15.0, dishCatCol <- "Бургеры", dishImageCol <- "burger", dishRestIdCol <- 3))
+            try db?.run(dishes.insert(dishNameCol <- "Кола", dishDescCol <- "Освежающий напиток", dishPriceCol <- 3.5, dishCatCol <- "Напитки", dishImageCol <- "drink", dishRestIdCol <- 3))
         } catch {
             print("Insert dishes error: \(error)")
         }
@@ -165,7 +166,7 @@ class DatabaseService {
     // MARK: - User Methods
     func registerUser(email: String, password: String, name: String, phone: String) -> User? {
         do {
-            let insert = users.insert(self.email <- email, passwordHash <- password, userName <- name, self.phone <- phone)
+            let insert = users.insert(userEmailCol <- email, userPasswordHashCol <- password, userNameCol <- name, userPhoneCol <- phone)
             let rowId = try db?.run(insert)
             return User(id: Int(rowId ?? 0), email: email, passwordHash: password, name: name, phone: phone)
         } catch {
@@ -176,14 +177,14 @@ class DatabaseService {
     
     func loginUser(email: String, password: String) -> User? {
         do {
-            let query = users.filter(self.email == email && passwordHash == password)
-            if let userRow = try db?.pluck(query) {
+            let query = users.filter(userEmailCol == email && userPasswordHashCol == password)
+            if let row = try db?.pluck(query) {
                 return User(
-                    id: Int(userRow[id]),
-                    email: userRow[self.email],
-                    passwordHash: userRow[passwordHash],
-                    name: userRow[userName],
-                    phone: userRow[phone]
+                    id: Int(row[userIdCol]),
+                    email: row[userEmailCol],
+                    passwordHash: row[userPasswordHashCol],
+                    name: row[userNameCol],
+                    phone: row[userPhoneCol]
                 )
             }
         } catch {
@@ -193,88 +194,46 @@ class DatabaseService {
     }
     
     // MARK: - Restaurant Methods
-    func fetchRestaurants() -> [Restaurant] {
+    func getAllRestaurants() -> [Restaurant] {
         var result: [Restaurant] = []
         do {
-            let query = restaurants.select(restId, restName, latitude, longitude, cuisineType)
-            let rows = try db?.prepare(query)
-            if let rows = rows {
+            if let rows = try db?.prepare(restaurants) {
                 for row in rows {
-                    let restaurant = Restaurant(
-                        id: Int(row[restId]),
-                        name: row[restName],
-                        latitude: row[latitude],
-                        longitude: row[longitude],
-                        cuisineType: row[cuisineType]
-                    )
-                    result.append(restaurant)
+                    result.append(Restaurant(
+                        id: Int(row[restIdCol]),
+                        name: row[restNameCol],
+                        latitude: row[restLatCol],
+                        longitude: row[restLonCol],
+                        cuisineType: row[restCuisineCol]
+                    ))
                 }
             }
         } catch {
-            print("Fetch restaurants error: \(error)")
+            print("Error fetching restaurants: \(error)")
         }
         return result
     }
     
     // MARK: - Dish Methods
-    func fetchDishes(restaurantId: Int) -> [Dish] {
+    func getAllDishes() -> [Dish] {
         var result: [Dish] = []
         do {
-            let query = dishes.filter(self.restaurantId == Int64(restaurantId))
-            let rows = try db?.prepare(query)
-            if let rows = rows {
+            if let rows = try db?.prepare(dishes) {
                 for row in rows {
-                    let dish = Dish(
-                        id: Int(row[dishId]),
-                        name: row[dishName],
-                        description: row[dishDescription],
-                        price: row[price],
-                        category: row[category],
-                        imageName: row[imageName],
-                        restaurantId: Int(row[self.restaurantId])
-                    )
-                    result.append(dish)
+                    result.append(Dish(
+                        id: Int(row[dishIdCol]),
+                        name: row[dishNameCol],
+                        description: row[dishDescCol],
+                        price: row[dishPriceCol],
+                        category: row[dishCatCol],
+                        imageName: row[dishImageCol],
+                        restaurantId: Int(row[dishRestIdCol])
+                    ))
                 }
             }
         } catch {
-            print("Fetch dishes error: \(error)")
+            print("Error fetching dishes: \(error)")
         }
         return result
-    }
-    
-    // MARK: - Order Methods
-    func saveOrder(userId: Int, restaurantId: Int, paymentMethod: String, deliveryAddress: String, comment: String, totalAmount: Double, items: [(dishId: Int, quantity: Int, pricePerUnit: Double)]) -> Bool {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateString = dateFormatter.string(from: Date())
-        
-        do {
-            let insertOrder = orders.insert(
-                self.userId <- Int64(userId),
-                self.restaurantId <- Int64(restaurantId),
-                status <- "new",
-                self.paymentMethod <- paymentMethod,
-                self.deliveryAddress <- deliveryAddress,
-                self.comment <- comment,
-                self.totalAmount <- totalAmount,
-                createdAt <- dateString
-            )
-            let orderIdValue = try db?.run(insertOrder)
-            guard let orderIdValue = orderIdValue else { return false }
-            
-            for item in items {
-                let insertItem = orderItems.insert(
-                    orderForeignKey <- orderIdValue,
-                    dishForeignKey <- Int64(item.dishId),
-                    quantity <- item.quantity,
-                    pricePerUnit <- item.pricePerUnit
-                )
-                try db?.run(insertItem)
-            }
-            return true
-        } catch {
-            print("Save order error: \(error)")
-            return false
-        }
     }
 }

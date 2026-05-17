@@ -7,22 +7,18 @@
 
 import Foundation
 
-// MARK: - OrderItem (для БД)
 struct OrderItem: Identifiable, Codable {
-    let id: Int
-    let orderId: Int
-    let dishId: Int
-    let quantity: Int
-    let pricePerUnit: Double
-}
-
-// MARK: - CartItem (для корзины)
-struct CartItem: Identifiable, Codable {
-    let id = UUID()
-    let dish: Dish
+    var id: Int
+    var orderId: Int
+    var dishId: Int
     var quantity: Int
+    var pricePerUnit: Double
     
-    var totalPrice: Double {
-        Double(quantity) * dish.price
+    init(id: Int = Int.random(in: 1...9999), orderId: Int, dishId: Int, quantity: Int, pricePerUnit: Double) {
+        self.id = id
+        self.orderId = orderId
+        self.dishId = dishId
+        self.quantity = quantity
+        self.pricePerUnit = pricePerUnit
     }
 }
