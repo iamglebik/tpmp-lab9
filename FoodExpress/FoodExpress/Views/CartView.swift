@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CartView: View {
-    @StateObject private var cartViewModel = CartViewModel()
+    @StateObject private var viewModel = CartViewModel()
     @State private var showCheckout: Bool = false
     
     var body: some View {
         NavigationView {
             VStack {
-                if cartViewModel.items.isEmpty {
+                if viewModel.items.isEmpty {
                     Spacer()
                     VStack(spacing: 12) {
                         Image(systemName: "cart")
@@ -27,7 +27,7 @@ struct CartView: View {
                     Spacer()
                 } else {
                     List {
-                        ForEach(cartViewModel.items) { item in
+                        ForEach(viewModel.items) { item in
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text(item.dish.name)
@@ -41,7 +41,7 @@ struct CartView: View {
                                 
                                 HStack(spacing: 12) {
                                     Button(action: {
-                                        cartViewModel.updateQuantity(item: item, quantity: item.quantity - 1)
+                                        viewModel.updateQuantity(item: item, quantity: item.quantity - 1)
                                     }) {
                                         Image(systemName: "minus.circle")
                                             .foregroundColor(.orange)
@@ -51,7 +51,7 @@ struct CartView: View {
                                         .frame(minWidth: 20)
                                     
                                     Button(action: {
-                                        cartViewModel.updateQuantity(item: item, quantity: item.quantity + 1)
+                                        viewModel.updateQuantity(item: item, quantity: item.quantity + 1)
                                     }) {
                                         Image(systemName: "plus.circle")
                                             .foregroundColor(.orange)
@@ -61,7 +61,7 @@ struct CartView: View {
                         }
                         .onDelete { indexSet in
                             for index in indexSet {
-                                cartViewModel.removeFromCart(item: cartViewModel.items[index])
+                                viewModel.removeFromCart(item: viewModel.items[index])
                             }
                         }
                     }
@@ -72,7 +72,7 @@ struct CartView: View {
                             Text(String(localized: "cart_total"))
                                 .font(.headline)
                             Spacer()
-                            Text("\(String(format: "%.2f", cartViewModel.totalAmount)) BYN")
+                            Text("\(String(format: "%.2f", viewModel.totalAmount)) BYN")
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .foregroundColor(.orange)
