@@ -9,15 +9,22 @@ import SwiftUI
 
 struct ProfileView: View {
     @Binding var isLoggedIn: Bool
-    @AppStorage("userName") private var userName = ""
-    @AppStorage("userEmail") private var userEmail = ""
-    @AppStorage("userPhone") private var userPhone = ""
     @StateObject private var authViewModel = AuthViewModel()
-    @State private var showingEditProfile = false
+    
+    private var userName: String {
+        UserDefaults.standard.string(forKey: "userName") ?? ""
+    }
+    private var userEmail: String {
+        UserDefaults.standard.string(forKey: "userEmail") ?? ""
+    }
+    private var userPhone: String {
+        UserDefaults.standard.string(forKey: "userPhone") ?? ""
+    }
     
     var body: some View {
         NavigationView {
             VStack(spacing: 25) {
+                
                 Image(systemName: "person.circle.fill")
                     .font(.system(size: 100))
                     .foregroundColor(.orange)
@@ -47,27 +54,15 @@ struct ProfileView: View {
                 .padding()
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
-                
-                Button(action: {
-                    showingEditProfile = true
-                }) {
-                    Text("Редактировать профиль")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
                 .padding(.horizontal)
-                .sheet(isPresented: $showingEditProfile) {
-                    EditProfileView()
-                }
+                
+                Spacer()
                 
                 Button(action: {
                     authViewModel.logout()
                     isLoggedIn = false
                 }) {
-                    Text("Выйти")
+                    Text(String(localized: "profile_logout"))
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color.red)
@@ -75,11 +70,10 @@ struct ProfileView: View {
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
-                
-                Spacer()
+                .padding(.bottom, 30)
             }
-            .padding()
-            .navigationTitle("Профиль")
+            .padding(.top, 20)
+            .navigationTitle(String(localized: "profile_title"))
         }
     }
 }

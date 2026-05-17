@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct FoodExpressApp: App {
+    @State private var isLoggedIn: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isLoggedIn {
+                MainTabView(isLoggedIn: $isLoggedIn)
+            } else {
+                AuthView(isLoggedIn: $isLoggedIn)
+            }
         }
     }
 }
