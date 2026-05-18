@@ -1,3 +1,10 @@
+//
+//  CartViewModelTests.swift
+//  FoodExpressTests
+//
+//  Created by Глеб Синяков on 18.05.26.
+//
+
 import XCTest
 @testable import FoodExpress
 
