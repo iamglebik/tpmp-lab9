@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @StateObject private var cartViewModel = CartViewModel()
+    @EnvironmentObject var viewModel: CartViewModel
     @State private var paymentMethod: String = "Наличные"
     @State private var address: String = ""
     @State private var comment: String = ""
