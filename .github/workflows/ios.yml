@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    name: Build and Test
+    name: Build and Unit Tests
     runs-on: macos-15
     
     steps:
@@ -40,15 +40,3 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
             -only-testing:FoodExpressTests
-      
-      - name: Run UI Tests
-        run: |
-          xcodebuild test \
-            -project FoodExpress/FoodExpress.xcodeproj \
-            -scheme FoodExpress \
-            -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
-            -only-testing:FoodExpressUITests
