@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainMenuView: View {
     @StateObject private var menuViewModel = MenuViewModel()
-    @StateObject private var cartViewModel = CartViewModel()
+    @EnvironmentObject var cartViewModel: CartViewModel
     @State private var searchText: String = ""
     
     var body: some View {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB08132B2FBB4FBF0004CAFD /* AuthViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08132A2FBB4FBF0004CAFD /* AuthViewModelTests.swift */; };
+		DB08132D2FBB4FEC0004CAFD /* CartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08132C2FBB4FEC0004CAFD /* CartViewModelTests.swift */; };
+		DB08132F2FBB50170004CAFD /* MenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08132E2FBB50170004CAFD /* MenuViewModelTests.swift */; };
 		DBE10CF42FB9F86D00B9A119 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE10CF32FB9F86D00B9A119 /* CheckoutView.swift */; };
 		DBE10CF62FB9F92500B9A119 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE10CF52FB9F92500B9A119 /* MapView.swift */; };
 		DBE10CF82FB9FCBF00B9A119 /* DishRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE10CF72FB9FCBF00B9A119 /* DishRowView.swift */; };
@@ -55,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB08132A2FBB4FBF0004CAFD /* AuthViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTests.swift; sourceTree = "<group>"; };
+		DB08132C2FBB4FEC0004CAFD /* CartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModelTests.swift; sourceTree = "<group>"; };
+		DB08132E2FBB50170004CAFD /* MenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModelTests.swift; sourceTree = "<group>"; };
 		DBE10CF32FB9F86D00B9A119 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		DBE10CF52FB9F92500B9A119 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DBE10CF72FB9FCBF00B9A119 /* DishRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishRowView.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				DBECE35D2FB8D25600F0370C /* FoodExpressTests.swift */,
+				DB08132A2FBB4FBF0004CAFD /* AuthViewModelTests.swift */,
+				DB08132C2FBB4FEC0004CAFD /* CartViewModelTests.swift */,
+				DB08132E2FBB50170004CAFD /* MenuViewModelTests.swift */,
 			);
 			path = FoodExpressTests;
 			sourceTree = "<group>";
@@ -399,7 +408,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB08132B2FBB4FBF0004CAFD /* AuthViewModelTests.swift in Sources */,
+				DB08132D2FBB4FEC0004CAFD /* CartViewModelTests.swift in Sources */,
 				DBECE35E2FB8D25600F0370C /* FoodExpressTests.swift in Sources */,
+				DB08132F2FBB50170004CAFD /* MenuViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

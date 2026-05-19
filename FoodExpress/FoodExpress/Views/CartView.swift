@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @StateObject private var viewModel = CartViewModel()
+    @EnvironmentObject var viewModel: CartViewModel
     @State private var showCheckout: Bool = false
     
     var body: some View {

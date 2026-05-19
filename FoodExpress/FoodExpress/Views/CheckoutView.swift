@@ -8,26 +8,23 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @StateObject private var cartViewModel = CartViewModel()
+    @EnvironmentObject var viewModel: CartViewModel
     @State private var paymentMethod: String = "Наличные"
     @State private var address: String = ""
     @State private var comment: String = ""
     @State private var showSuccess: Bool = false
     @Environment(\.dismiss) private var dismiss
     
-    let paymentMethods = ["Наличные", "Онлайн", "ЕРИП", "Терминал"]
-    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
                     
-                    // MARK: - Состав заказа
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Состав заказа")
                             .font(.headline)
                         
-                        ForEach(cartViewModel.items) { item in
+                        ForEach(viewModel.items) { item in
                             HStack {
                                 Text(item.dish.name)
                                     .font(.subheadline)
@@ -44,7 +41,7 @@ struct CheckoutView: View {
                             Text(String(localized: "checkout_total"))
                                 .font(.headline)
                             Spacer()
-                            Text("\(String(format: "%.2f", cartViewModel.totalAmount)) BYN")
+                            Text("\(String(format: "%.2f", viewModel.totalAmount)) BYN")
                                 .font(.headline)
                                 .foregroundColor(.orange)
                         }
@@ -53,7 +50,6 @@ struct CheckoutView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
                     
-                    // MARK: - Способ оплаты
                     VStack(alignment: .leading, spacing: 8) {
                         Text(String(localized: "checkout_payment_method"))
                             .font(.headline)
@@ -70,7 +66,6 @@ struct CheckoutView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
                     
-                    // MARK: - Адрес доставки
                     VStack(alignment: .leading, spacing: 8) {
                         Text(String(localized: "checkout_delivery_address"))
                             .font(.headline)
@@ -82,7 +77,6 @@ struct CheckoutView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
                     
-                    // MARK: - Комментарий
                     VStack(alignment: .leading, spacing: 8) {
                         Text(String(localized: "checkout_comment"))
                             .font(.headline)
@@ -94,13 +88,12 @@ struct CheckoutView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
                     
-                    // MARK: - Кнопка подтверждения
                     Button(action: {
                         if address.isEmpty {
                             return
                         }
                         showSuccess = true
-                        cartViewModel.clearCart()
+                        viewModel.clearCart()
                     }) {
                         Text(String(localized: "checkout_confirm"))
                             .frame(maxWidth: .infinity)

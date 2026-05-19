@@ -1,0 +1,45 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build and Unit Tests
+    runs-on: macos-15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+      
+      - name: List available simulators
+        run: xcrun simctl list devices available | grep iPhone
+      
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project FoodExpress/FoodExpress.xcodeproj \
+            -scheme FoodExpress \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+      
+      - name: Run Unit Tests
+        run: |
+          xcodebuild test \
+            -project FoodExpress/FoodExpress.xcodeproj \
+            -scheme FoodExpress \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            -only-testing:FoodExpressTests
