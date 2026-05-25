@@ -12,7 +12,7 @@
 ## Документация
 
 - [Спецификация требований](Specification.md)
-- [Презентация проекта](presentation.pdf)
+- [Презентация проекта](FoodExpress.pdf)
 
 ## Wiki
 
