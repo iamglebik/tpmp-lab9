@@ -100,8 +100,7 @@ FoodExpress — мобильное приложение-агрегатор ре�
 
 **Актёр:** Пользователь (Клиент)
 
-<img width=100% alt="Диаграмма вариантов использования-Страница-10 drawio" src="https://github.com/user-attachments/assets/9e626dec-d5e7-40fd-b75a-8797bd066f6a" />
-
+<img width=100% alt="вариантов использывания drawio" src="https://github.com/user-attachments/assets/f69b6ad0-da91-446e-9002-1eeb68d52407" />
 
 **Текстовый сценарий «Оформление заказа» (основной поток):**
 
