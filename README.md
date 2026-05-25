@@ -37,7 +37,8 @@ FoodExpress
 
 Готовые скриншоты экранов приложения приведены ниже.
 
-*[Вставить скриншоты трёх экранов: Авторизация, Главное меню, Корзина/Оформление заказа]*
+<img width="1764" height="1280" alt="forREADMEpng" src="https://github.com/user-attachments/assets/533dca4d-c359-4f4d-a965-0e80afad6be1" />
+
 
 ## Branching Strategy
 
