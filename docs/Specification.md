@@ -129,7 +129,7 @@ FoodExpress — мобильное приложение-агрегатор ре�
 
 ### 4.2. Диаграмма классов
 
-<img width=100% alt="классов drawio" src="https://github.com/user-attachments/assets/0c4dcc54-7223-4b6d-9060-563dc04ad4bf" />
+<img width="100%" alt="image" src="https://github.com/user-attachments/assets/2c1d4dcb-b0b2-4fba-8bde-45d6e06d65fc" />
 
 ### 4.3. Физическая модель базы данных (SQLite)
 
